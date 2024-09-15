@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply bg-background text-primary /* bg-gradient-to-r from-transparent via-[#4c484864] to-transparent backdrop-blur-lg */;
+  }
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+  
