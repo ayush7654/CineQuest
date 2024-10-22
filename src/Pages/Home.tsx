@@ -13,12 +13,31 @@ export default function Home() {
   console.log(path)
   
  const [homepageMovies,setHomepageMovies ]= useState<propType[]>([])
+const [BgImg,setBgImg]= useState<string>('/HomeBGImg10.jpg')
 
+useEffect(()=>{
+  const handleResize = () => {
+    if (window.innerWidth < 800) {
+      setBgImg('/HomeBGPhone.jpg');
+    } else {
+      setBgImg('/HomeBGImg10.jpg');
+    }
+  };
+
+  // Call it once to set the initial value
+  handleResize();
+
+  // Add event listener to handle window resize
+  window.addEventListener('resize', handleResize);
+
+  // Clean up the event listener when the component unmounts
+  return () => window.removeEventListener('resize', handleResize);
+},[])
  const backgroundImage = path.pathname === '/'
-    ? `url('../public/HomeBGImg10.jpg')`
+    ? `url(${BgImg})`
     : undefined;
 
-
+console.log(BgImg)
  //Fetching data about upcoming movies to display them on homepage.
  useEffect(()=>{
   const fetchData=async()=>{
@@ -37,12 +56,12 @@ export default function Home() {
  
  //
  const movieComponent= homepageMovies.length!==0?
-                    <div className="flex flex-row gap-3">{[...Array(5)].map((_,index)=><div key={index}><Link to={`/film/${homepageMovies[index].title}`} state={{id:`${homepageMovies[index].id}`}}><img className="border border-gray-600 rounded-lg" src={`https://image.tmdb.org/t/p/w200/${homepageMovies[index].poster_path}`}/></Link></div>)}</div>
+                    <div className="flex flex-row gap-2">{[...Array(window.innerWidth>800?5:3)].map((_,index)=><div key={index}><Link to={`/film/${homepageMovies[index].title}`} state={{id:`${homepageMovies[index].id}`}}><img className="border border-gray-600 rounded-lg" src={`https://image.tmdb.org/t/p/w200/${homepageMovies[index].poster_path}`}/></Link></div>)}</div>
                     :<div>Loading...</div>
 
  
   return (
-    <div className="h-[1000px]">
+    <div className="">
         <div className=" h-3/4 flex flex-col justify-center items-center absolute inset-0 bg-no-repeat "
     style={{
       backgroundImage: backgroundImage 
@@ -56,19 +75,19 @@ export default function Home() {
       //backgroundAttachment:"fixed",
       zIndex: -1, // Make sure it stays behind the content
     }} ></div>
-      <div className="h-96 mt-5 " >
+      <div className="h-36 mt-5 sm:h-96 " >
       
       </div>
       
       <div className="flex flex-col  items-center">
       <div className="flex flex-col p-6 gap-1 items-center text-white font-bold font-serif ">
-        <div className="text-3xl text-extrabold ">Track films you’ve watched.</div>
-        <div className="text-3xl text-extrabold "> Save those you want to see.</div>
-        <div className="text-3xl text-extrabold ">Tell your friends what’s good. </div>
+        <div className="text-2xl text-extrabold sm:text-3xl ">Track films you’ve watched.</div>
+        <div className="text-2xl text-extrabold sm:text-3xl "> Save those you want to see.</div>
+        <div className="text-2xl text-extrabold sm:text-3xl ">Tell your friends what’s good. </div>
       </div>
-        <Link to={'./signin'}><button className="bg-green-600 w-80 text-white font-semibold rounded-lg p-2">Get Started</button></Link>
+        <Link to={'./signin'}><button className="bg-green-600 w-64 text-white font-semibold rounded-lg p-2 sm:w-80">Get Started</button></Link>
         <p className="p-4 text-gray-500 text-sm"> The social network for film lovers. </p>
-        <div className="m-5 ">
+        <div className="m-3">
            {movieComponent}
         </div>
       </div>

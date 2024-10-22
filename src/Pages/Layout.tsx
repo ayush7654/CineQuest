@@ -8,7 +8,7 @@ export default function Layout() {
     <div className="relative bg-no-repeat ">
       
       <Header />
-      <div className='mx-32 '>    
+      <div className='mx-5 lg:mx-32'>    
         <Outlet />
         </div>
    
