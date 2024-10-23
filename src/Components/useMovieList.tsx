@@ -12,7 +12,7 @@ type MovieType= Partial<Movies>
 export default function useMovieList(list:MovieType[],previousPage:string,forPage:string) {
   return (<>{forPage!=="SearchResults"?
     <div className="flex justify-center">
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 gap-1 md:grid-cols-3 lg:grid-cols-4 ">
        {list.map((movie, index) => (
          <div
            className="p-2 rounded-xl"

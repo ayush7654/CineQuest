@@ -32,15 +32,15 @@ export default function FilmCategory() {
        const location= useLocation()
        console.log(location)
   return (
-    <div className='px-36 flex justify-center'>
+    <div className=' flex justify-center'>
         <div className="flex flex-col justify-center w-full mt-10">
             <div className="flex flex-row gap-4">{/* first */}
               <div><Link to={'../films'}><FontAwesomeIcon icon={faArrowLeft}/></Link> </div>
              <div>FILMS</div>
             </div>
-            <div className='mb-5  text-gray-400'>{/* Third */}
-        ______________________________________________________________________________________________________________________________________________
-            </div>
+            <div className='mt-5 mb-10 border border-gray-400 '>{/* Third */}
+      
+      </div>
             <div className="flex justify-center bg-[#516e7892]  p-2 ">{/* second */}
                 There are {movieList && movieList.length} films
             </div>
