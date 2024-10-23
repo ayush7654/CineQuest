@@ -34,14 +34,16 @@ useEffect(()=>{
 
 console.log(searchResults)
   return (
-   <div className='borde border-white mx-36 mt-10'>
+   <div className='borde border-white mt-5 overflow-x-hidden lg:mx-36'>
     <div className='flex flex-col gap-0'>
     <div className='text-sm text-gray-400'>SHOWING MATCHES FOR  "{params.filmName?.toUpperCase()}"</div>
-    <div className='flex justify-center text-gray-600 font-extrabold'>_____________________________________________________________________________________________________________________________________</div>
+    <div className='mt-5 mb-5 border border-gray-600 '>{/* Third */}
+      
+      </div>
     </div>
   
 
-    <div className="mt-4 ">
+    <div className=" ">
                 {searchResults.length!==0?useMovieList(searchResults,`../search/${location.state.previousPage}`,"SearchResults"):<div>Loading...</div>}
             </div>
    </div>
