@@ -27,45 +27,44 @@ const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 
 
   return (
-    <div className='mx-36 '>
+    <div className='borde border-2-white overflow-x-hidden'>
     <div className='flex flex-col w-full'>
-      <div className='flex flex-row justify-between mt-10 p-2' > {/* first line div */}
-        <div className='flex flex-row gap-2' >
-            <div className='flex items-center font-medium'>Browse by</div>
-            <div className='flex flex-row gap-10 p-2 px-8 borde border-gray-500 bg-gradient-to-r from-[#4b556360] via-[#4b5563a6] to-[#4b556360] backdrop-blur-lg'>
-             <div className=''><Link to='/films/popular'>Popular</Link></div>
+      <div className='flex flex-row w-full mt-5 sm:mt-10 ' > {/* first line div */}
+        <div className='flex justify-center w-full' >
+            <div className='w-full text-xs flex flex-row justify-around p-2 borde border-gray-500 bg-gradient-to-r from-[#4b556360] via-[#4b5563a6] to-[#4b556360] backdrop-blur-lg sm:text-base '>
+             <div><Link to='/films/popular'>Popular</Link></div>
              <div><Link to='/films/now_playing'>Now Playing</Link></div>
              <div><Link to='/films/top_rated'>Top Rated</Link></div>
              <div><Link to='/films/upcoming'>Upcoming</Link></div>
             </div>
-        </div>
-        <div className='flex flex-row gap-4'>
+        </div> 
+       {/*  <div className='hidden flex flex-row gap-4 '>
             <div className='flex items-center font-medium'>Find a film</div>
             <input className='text-gray-700 p-1 font-medium rounded-lg ' placeholder='search'/>
-        </div>
+        </div> */}
       </div>
-      <div className='flex flex-row justify-between mt-10 text-gray-400'  >{/* Second */}
+      <div className='flex flex-row text-sm justify-between mt-10 text-gray-400 sm:text-base'  >{/* Second */}
        <div>POPULAR FILSM THIS WEEK</div>
        <p>MORE</p>
       </div>
-      <div className='mb-10  text-gray-400'>{/* Third */}
-        _________________________________________________________________________________________________________________________________________________
+      <div className='mt-5 mb-10 border border-gray-400 '>{/* Third */}
+      
       </div>
-      <div className='flex flex-row justify-center w-full gap-6'> {/* Forth */}
-      <button className=''   id='left-arrow' onClick={handleClick} ><FontAwesomeIcon icon={faArrowLeft} className='size-7
+     <div className='flex flex-row justify-center w-full gap-0 sm:gap-6 lg:mt-10'>
+      <button className='hidden lg:flex lg:justify-center lg:h-[300px] items-center'   id='left-arrow' onClick={handleClick} ><FontAwesomeIcon icon={faArrowLeft} className='size-7
       ' /></button>
       <div className='overflow-hidden w-[852px]   '>
-       <div className=' flex flex-row  transition-transform ease-in-out duration-500 ' style={{transform:`translateX(-${currentMovies*100}%)`}} >
-       <CarosulComponent limit={{start:0,end:4}} /> 
-       <CarosulComponent limit={{start:4,end:8}} /> 
-       <CarosulComponent limit={{start:8,end:12}} /> 
-       <CarosulComponent limit={{start:12,end:16}} /> 
-       <CarosulComponent limit={{start:16,end:20}} />   
+       <div className=' flex flex-row justify-center gap-4 lg:justify-start lg:gap-0  transition-transform ease-in-out duration-500 ' style={{transform:`translateX(-${currentMovies*100}%)`}} >
+       <div className='flex'><CarosulComponent limit={{start:0,end:4}} /> </div>
+      <div className='hidden md:flex'><CarosulComponent  limit={{start:4,end:8}} /> </div>
+        <div className='hidden lg:flex'><CarosulComponent limit={{start:8,end:12}} /></div> 
+       <div className='hidden lg:flex'><CarosulComponent limit={{start:12,end:16}} /></div>  
+       <div className='hidden lg:flex'><CarosulComponent limit={{start:16,end:20}} /></div>  
        </div>
        </div>
       
-      <button className='' id='right-arrow' onClick={handleClick}><FontAwesomeIcon icon={faArrowRight} className='size-7' /></button>
-      </div>
+      <button className='hidden lg:flex lg:h-[300px] items-center' id='right-arrow' onClick={handleClick}><FontAwesomeIcon icon={faArrowRight} className='size-7' /></button>
+      </div> 
      
     </div>
     </div>

@@ -37,12 +37,12 @@ useEffect(()=>{
     fetchMovies();
    },[]) 
    
-  return (<div className="py-2">
-    {movieList.length!==0?<div className="flex flex-row gap-4 w-[853px]" >
+  return (<div className="py-2 borde border-white">
+    {movieList.length!==0?<div className="flex flex-col gap-4 w-[200px] lg:w-[852px] lg:flex lg:flex-row" >
         {movieList.slice(props.limit.start,props.limit.end).map((item,index)=><Link key={index} to={`../film/${item.original_title}`} state={{id:item.id ,previousPage:'../films'}}><img  className="w-[200px] h-auto flex-shrink-0 rounded-lg border hover:border-2 hover:border-green-600 hover:-translate-y-2  hover:shadow-lg hover:shadow-green-600 border-gray-600" key={index} src= {`https://image.tmdb.org/t/p/w200/${item.poster_path}`}/></Link>)}
 
         </div>:<div className="flex flex-row gap-2" >
-          {[...Array(4)].map((_,index)=><div key={index} className="w-[200px] h-[300px] bg-gray-700"></div>)}</div>}
+          {[...Array(4)].map((_,index)=><div key={index} className="w-[200px] bg-gray-700"></div>)}</div>}
         </div>
   
     
