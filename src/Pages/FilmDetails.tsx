@@ -141,7 +141,7 @@ console.log( "this is film Details page",movie)
    <div className="flex flex-row borde border-white w-full h-[50%] sm:mt-48 md:mt-80  lg:mx-36  ">
         <div className="flex justify-center border-0 border-white h-full w-[40%] sm:w-[1/3]">
         <div className="border-0 border-white mt-28 w-[80%] h-[60%] overflow-hidde">
-        <img className="border-2 border-gray-600  object-cover" src={`https://image.tmdb.org/t/p/w200/${filmInfo.poster_path}`}/>
+        <img className="border-2 border-gray-600  object-cover" src={`https://image.tmdb.org/t/p/w500/${filmInfo.poster_path}`}/>
         <div className="py-4 text-sm flex justify-center text-gray-400 font-medium"><span>RATING:<span className="text-sm text-gray-200 sm:text-2xl"> {filmInfo.vote_average?.toFixed(1)}</span>/10</span></div>
         </div>
         </div>
