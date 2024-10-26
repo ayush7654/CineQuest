@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
+
 import { useState } from 'react';
+import Sidebar from './Sidebar';
 
 export default function Header() {
   const path= useLocation()
@@ -15,6 +17,7 @@ export default function Header() {
   return (
     <div className=''>
       <div  className={` flex flex-row justify-around p-0 text-xs items-center text-white font-sans font-semibold lg: hover:bg-[#31323460] ${path.pathname==='/' || path.state!==null?"bg-[#2c282883]":"bg-[#4b5563a6] "} '}`} > {/* hover:bg-[#31323460] ${path.pathname==='/' || path.state!==null?"bg-[#2c282883]":"bg-[#4b5563a6] "} */}
+      <Sidebar/>
       <div className='  flex flex-row rounded-lg items-center overflow-hidden'>
          <Link to={'/'} className=' rounded-lg w-10 lg:w-16'><img className='' src='/CineQuestLogo2.png'/></Link>
          <Link to={'/'} className=' rounded-lg '><div className='-ml-3 text-lg  font-extrabold rounded-lg p-2 lg:text-3xl'>CINEQuest</div></Link>
@@ -33,6 +36,18 @@ export default function Header() {
         
        
     </div>
+{/*     <div className='flex flex-row w-full  sm:mt-10 ' >
+        <div className='flex justify-center w-full' >
+            <div className='w-full text-xs flex flex-row justify-around p-2 borde border-gray-500 bg-gradient-to-r from-[#4b556360] via-[#4b5563a6] to-[#4b556360] backdrop-blur-lg sm:text-base '>
+             <div><Link to='/films/popular'>SIGN IN</Link></div>
+             <div><Link to='/films/now_playing'>CREATE ACCOUNT</Link></div>
+             <div><Link to='/films/top_rated'>TOP RATED</Link></div>
+           
+            </div>
+        </div> 
+     
+      </div> */}
+     
     </div>
     
   )

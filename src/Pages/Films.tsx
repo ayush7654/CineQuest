@@ -38,10 +38,7 @@ const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
              <div><Link to='/films/upcoming'>Upcoming</Link></div>
             </div>
         </div> 
-       {/*  <div className='hidden flex flex-row gap-4 '>
-            <div className='flex items-center font-medium'>Find a film</div>
-            <input className='text-gray-700 p-1 font-medium rounded-lg ' placeholder='search'/>
-        </div> */}
+     
       </div>
       <div className='flex flex-row text-sm justify-between mt-10 text-gray-400 sm:text-base'  >{/* Second */}
        <div>POPULAR FILSM THIS WEEK</div>
