@@ -37,20 +37,3 @@ export default function Header() {
     
   )
 }
-  //path.pathname==='/'||'/film/'
-{/* <div className={`${path.pathname==='/'?"relative p-10":""}` }>
-      <div className={`flex flex-row justify-around p-4 text-lg items-center text-white font-sans font-semibold ${path.pathname==='/'?'  p-7 absolute inset-0 bg-gradient-to-r from-[#443b3b42] via-transparent to-[#443b3b42] backdrop-blur-lg':' bg-[#516e7892]  p-6 '}`}>
-      <div> <Link to={'/'} className=''>Logo and title</Link></div>
-      <div className='flex flex-row gap-7'><Link to='/signin' >SIGN IN</Link>
-        <Link to='/createAccount' >CREATE ACCOUNT</Link>
-        <Link to='/films' >FILMS</Link>
-        <Link to='/members' >MEMBERS</Link>
-      </div>
-      <div>
-      <input  className='rounded-full p-2 text-gray-700' placeholder='seachbox'/>
-      </div>
-       
-        
-       
-    </div>
-    </div> */}
