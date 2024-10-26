@@ -35,7 +35,7 @@ export default function FilmDetails() {
   
 
     const movie= useLocation()
-    const [image,setImage]= useState<string|null>(null) // remove null if any bug is found here 
+    const [image,setImage]= useState<string|null>('') // remove null if any bug is found here 
     const [filmInfo, setFilmInfo] = useState<filmInfoType>({})
     const [cast,setCast]= useState<movieCasttype[]>([])
 
@@ -79,7 +79,7 @@ zIndex: -1}
   
       // Cleanup event listener on component unmount
       return () => window.removeEventListener('resize', updateBgStyle);
-    }, []);
+    }, [image]);
 
 
     useEffect(()=>{
@@ -129,13 +129,14 @@ zIndex: -1}
 
     
 
-console.log( "this is film Details page",movie)
+/* console.log( "this is film Details page",movie) */
+console.log(image)
   
   return (
     <div className="h-[750px] flex flex-col place-items-center sm:h-[1000px] lg:mx-36  ">
       <div className="absolute text-lg top-20 left-2 lg:text-3xl lg:pl-10 mt-10"><Link  to={`../../${movie.state.previousPage}`} state={{previousPage:movie.state.previousPage}} ><FontAwesomeIcon icon={faArrowLeft}/></Link></div> 
       
-         <div className="h-1/2 flex flex-col absolute inset-0 bg-no-repeat  "
+         <div className="h-1/2 flex flex-col absolute inset-0 bg-no-repeat "
      style={BgStyle}> 
      
     </div>
