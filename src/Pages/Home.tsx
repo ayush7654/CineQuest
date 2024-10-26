@@ -57,7 +57,7 @@ console.log(BgImg)
  //
  const movieComponent= homepageMovies.length!==0?
                     <div className="flex flex-row gap-2">{[...Array(window.innerWidth>800?5:3)].map((_,index)=><div key={index}><Link to={`/film/${homepageMovies[index].title}`} state={{id:`${homepageMovies[index].id}`}}><img className="border border-gray-600 rounded-lg" src={`https://image.tmdb.org/t/p/w200/${homepageMovies[index].poster_path}`}/></Link></div>)}</div>
-                    :<div>Loading...</div>
+                    :<div>Loading...(JIO USERS IN INDIA CAN ACCESS THE SITE THROUGH VPN)</div>
 
  
   return (

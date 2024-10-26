@@ -32,12 +32,33 @@ type filmInfoType= Partial<FilmInfo>
 
 
 export default function FilmDetails() {
+  
 
     const movie= useLocation()
     const [image,setImage]= useState<string|null>(null) // remove null if any bug is found here 
     const [filmInfo, setFilmInfo] = useState<filmInfoType>({})
     const [cast,setCast]= useState<movieCasttype[]>([])
-    const [BgStyle,setBgStyle]= useState<any>('')
+
+    
+    const style1={backgroundImage: `url(https://image.tmdb.org/t/p/original/${image})`,
+  backgroundSize: 'contain',
+  backgroundPosition: '',
+  backgroundRepeat: 'no-repeat',
+  backgroundAttachment:'',
+  zIndex: -1}
+
+  const style2={backgroundImage: `url(https://image.tmdb.org/t/p/original/${image})`
+  ? `linear-gradient(to right, rgba(24, 24, 24, 1) 0%, rgba(24, 24, 24, 1) 10%,rgba(24, 24, 24, 1) 15%,rgba(24, 24, 24, .7) 20%, rgba(24, 24, 24, 0) 30%,rgba(24, 24, 24, 0) 50%, rgba(24, 24, 24, 0) 70%,rgba(24, 24, 24, 1) 85%, rgba(24, 24, 24, 1) 90%, rgba(24, 24, 24, 1) 100%),
+      linear-gradient(to bottom, rgba(24, 24, 24, 0) 70%,rgba(24, 24, 24, .7) 90%, rgba(24, 24, 24, 1)  100%),
+      ${`url(https://image.tmdb.org/t/p/original/${image})`}`
+  : undefined,
+backgroundSize: 'cover',
+backgroundPosition: 'center',
+backgroundRepeat: 'no-repeat',
+
+backgroundAttachment:'',
+zIndex: -1}
+    const [BgStyle,setBgStyle]= useState<any>(style2)
 
 
     useEffect(() => {
@@ -60,23 +81,6 @@ export default function FilmDetails() {
       return () => window.removeEventListener('resize', updateBgStyle);
     }, []);
 
-    const style1={backgroundImage: `url(https://image.tmdb.org/t/p/original/${image})`,
-  backgroundSize: 'contain',
-  backgroundPosition: '',
-  backgroundRepeat: 'no-repeat',
-  backgroundAttachment:'',
-  zIndex: -1}
-
-  const style2={backgroundImage: `url(https://image.tmdb.org/t/p/original/${image})`
-  ? `linear-gradient(to right, rgba(24, 24, 24, 1) 0%, rgba(24, 24, 24, 1) 10%,rgba(24, 24, 24, 1) 15%,rgba(24, 24, 24, .7) 20%, rgba(24, 24, 24, 0) 30%,rgba(24, 24, 24, 0) 50%, rgba(24, 24, 24, 0) 70%,rgba(24, 24, 24, 1) 85%, rgba(24, 24, 24, 1) 90%, rgba(24, 24, 24, 1) 100%),
-      linear-gradient(to bottom, rgba(24, 24, 24, 0) 70%,rgba(24, 24, 24, .7) 90%, rgba(24, 24, 24, 1)  100%),
-      ${`url(https://image.tmdb.org/t/p/original/${image})`}`
-  : undefined,
-backgroundSize: 'cover',
-backgroundPosition: 'center',
-backgroundRepeat: 'no-repeat',
-backgroundAttachment:'',
-zIndex: -1}
 
     useEffect(()=>{
        const fetchDetails=async()=>{
@@ -129,10 +133,10 @@ console.log( "this is film Details page",movie)
   
   return (
     <div className="h-[750px] flex flex-col place-items-center sm:h-[1000px] lg:mx-36  ">
-      <div className="absolute text-lg top-20 left-2 lg:text-3xl "><Link  to={`../../${movie.state.previousPage}`} state={{previousPage:movie.state.previousPage}} ><FontAwesomeIcon icon={faArrowLeft}/></Link></div> 
+      <div className="absolute text-lg top-20 left-2 lg:text-3xl lg:pl-10 mt-10"><Link  to={`../../${movie.state.previousPage}`} state={{previousPage:movie.state.previousPage}} ><FontAwesomeIcon icon={faArrowLeft}/></Link></div> 
       
          <div className="h-1/2 flex flex-col absolute inset-0 bg-no-repeat  "
-     style={window.innerWidth>800?style2:style1}> 
+     style={BgStyle}> 
      
     </div>
    
@@ -153,7 +157,7 @@ console.log( "this is film Details page",movie)
                  <div className="text-sm flex place-items-end sm:text-2xl">{filmInfo.release_date?.split('-')[0]}</div>
                </div>
          <div className="text-xs sm:text-sm">{filmInfo.tagline?.toUpperCase()}</div>
-         <div className="text-xs  text-gray-400 sm:text-lg ">{filmInfo.overview}</div>
+         <div className="text-xs line-clamp-6  text-gray-400 sm:text-lg ">{filmInfo.overview}</div>
          <div>
           <div>
           

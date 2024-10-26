@@ -9,10 +9,13 @@ export default {
         background:'#181818'
       },
       fontFamily:{
-        lora: ['Lora', 'serif']
+        lora: ['Lora', 'serif'],
+        allura:['Allura','cursive']
       }
     },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
 

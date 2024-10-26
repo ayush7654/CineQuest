@@ -45,7 +45,7 @@ const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       </div>
       <div className='flex flex-row text-sm justify-between mt-10 text-gray-400 sm:text-base'  >{/* Second */}
        <div>POPULAR FILSM THIS WEEK</div>
-       <p>MORE</p>
+       <Link to='/films/popular'>MORE</Link>
       </div>
       <div className='mt-5 mb-10 border border-gray-400 '>{/* Third */}
       

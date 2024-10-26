@@ -4,7 +4,7 @@ import Layout from './Pages/Layout'
 import SignIn from './Pages/SignIn'
 import CreateAccount from './Pages/CreateAccount'
 import Films from './Pages/Films'
-import Members from './Pages/Members'
+
 import Home from './Pages/Home'
 import FilmCategory from './Pages/FilmCategory'
 import FilmDetails from './Pages/FilmDetails'
@@ -23,7 +23,7 @@ function App() {
   <Route path='/createAccount' element={<CreateAccount/>}/> 
   <Route path='/films' element={<Films/>}/>
   <Route path='/films/:category' element={<FilmCategory/>}/> 
-  <Route path='/members' element={<Members/>}/> 
+ 
   <Route path='/film/:filmName' element={<FilmDetails/>}/>
   <Route path='search/:filmName' element={<SearchResults/>}/>
   </Route>

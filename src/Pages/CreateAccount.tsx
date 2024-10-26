@@ -1,12 +1,12 @@
 
-
+import { Link } from "react-router-dom"
 export default function CreateAccount() {
   return (
     <div className=" h-screen flex justify-center items-center">
       <div className="  w-full flex flex-col gap-4 p-6  bg-gray-600 rounded-lg sm:w-2/3 md:w-1/3"   >
       <div className="flex flex-row justify-between">  
         <div>JOIN CineQuest</div>
-        <div>X</div>
+        <Link to='/'>X</Link>
       </div>
 
       <div>
