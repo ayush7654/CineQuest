@@ -28,8 +28,8 @@ export default function Header() {
         <Link to='/films'>FILMS</Link>
        
       </div>
-      <div className='w-[30%] relative lg:w-[20%] flex items-center '>
-      <input className='rounded-lg p-1 w-[100%]  text-gray-700 lg:p-2 ' placeholder='Search...' value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} />
+      <div className='w-[20%] relative lg:w-[20%] flex items-center '>
+      <input className='rounded-lg p-1 w-[100%]   text-gray-700 lg:p-2 ' placeholder='Search...' value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} />
       <Link to={searchInput && `/search/${searchInput}`} state={{previousPage:searchInput}}><FontAwesomeIcon  icon={faSearch} className="text-gray-500 -ml-5 text-sm  lg:text-lg " /></Link>
       </div>
        

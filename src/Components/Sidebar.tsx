@@ -12,11 +12,11 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative sm:hidden ">
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 m-4 rounded-full text-gray-300 bg-gray-800 "
+        className="p-2 m-4 rounded-full text-gray-300 bg-gray-950 "
       >
          <svg
           className="w-4 h-4"
@@ -40,7 +40,7 @@ const Sidebar: React.FC = () => {
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
         variants={sidebarVariants}
-        className="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white shadow-lg z-20"
+        className="fixed top-0 left-0 h-full w-48 bg-gray-900 text-white shadow-lg z-20"
       >
         <div className="p-6 flex flex-col gap-5 ">
         <div><Link to='/'>HOME</Link></div>

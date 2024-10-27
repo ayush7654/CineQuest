@@ -41,8 +41,8 @@ export default function FilmCategory() {
             <div className='mt-5 mb-10 border border-gray-400 '>{/* Third */}
       
       </div>
-            <div className="flex justify-center bg-[#516e7892]  p-2 ">{/* second */}
-                There are {movieList && movieList.length} films
+            <div className="flex justify-center  bg-[#516e7892]  p-2 ">{/* second */}
+               {category && category.toUpperCase()}
             </div>
             <div className="mt-5 flex justify-center ">
                 {movieList.length!==0?useMovieList(movieList,location.pathname,"FilmCategory"):<div>Loading...</div>}
