@@ -12,6 +12,7 @@ export default {
         lora: ['Lora', 'serif'],
         allura:['Allura','cursive']
       }
+     
     },
   },
   plugins: [
