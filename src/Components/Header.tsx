@@ -36,17 +36,7 @@ export default function Header() {
         
        
     </div>
-{/*     <div className='flex flex-row w-full  sm:mt-10 ' >
-        <div className='flex justify-center w-full' >
-            <div className='w-full text-xs flex flex-row justify-around p-2 borde border-gray-500 bg-gradient-to-r from-[#4b556360] via-[#4b5563a6] to-[#4b556360] backdrop-blur-lg sm:text-base '>
-             <div><Link to='/films/popular'>SIGN IN</Link></div>
-             <div><Link to='/films/now_playing'>CREATE ACCOUNT</Link></div>
-             <div><Link to='/films/top_rated'>TOP RATED</Link></div>
-           
-            </div>
-        </div> 
-     
-      </div> */}
+
      
     </div>
     

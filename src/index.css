@@ -11,7 +11,7 @@
 
 
 body {
-    @apply bg-background text-primary /* bg-gradient-to-r from-transparent via-[#4c484864] to-transparent backdrop-blur-lg */;
+    @apply bg-background text-primary ;
   }
 
   

@@ -129,8 +129,8 @@ zIndex: -1}
 
     
 
-/* console.log( "this is film Details page",movie) */
-console.log(movie)
+
+
   
   return (
     <div className="h-[750px] flex flex-col place-items-center mx-5 sm:h-[1000px] lg:mx-36  ">
