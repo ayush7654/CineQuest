@@ -27,7 +27,7 @@ const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 
 
   return (
-    <div className='borde border-2-white overflow-x-hidden'>
+    <div className='borde border-2-white overflow-x-hidden mx-5'>
     <div className='flex flex-col w-full'>
       <div className='flex flex-row w-full mt-5 sm:mt-10 ' > {/* first line div */}
         <div className='flex justify-center w-full' >

@@ -130,10 +130,10 @@ zIndex: -1}
     
 
 /* console.log( "this is film Details page",movie) */
-console.log(image)
+console.log(movie)
   
   return (
-    <div className="h-[750px] flex flex-col place-items-center sm:h-[1000px] lg:mx-36  ">
+    <div className="h-[750px] flex flex-col place-items-center mx-5 sm:h-[1000px] lg:mx-36  ">
       <div className="absolute text-lg top-20 left-2 lg:text-3xl lg:pl-10 mt-10"><Link  to={movie.state.previousPage ? `../../${movie.state.previousPage}` : '/'} state={{previousPage:movie.state.previousPage}} ><FontAwesomeIcon icon={faArrowLeft}/></Link></div> 
       
          <div className="h-1/2 flex flex-col absolute inset-0 bg-no-repeat "
@@ -143,7 +143,7 @@ console.log(image)
    
     
    {filmInfo? 
-   <div className="flex flex-row borde border-white w-full h-[50%] sm:mt-48 md:mt-80  lg:mx-36  ">
+   <div className="flex flex-row mx-5 borde border-white w-full h-[50%]  sm:mt-48 md:mt-80  lg:mx-36  ">
         <div className="flex justify-center border-0 border-white h-full w-[40%] sm:w-[1/3]">
         <div className="border-0 border-white mt-28 w-[80%] h-[60%] overflow-hidde">
         <img className="border-2 border-gray-600  object-cover" src={`https://image.tmdb.org/t/p/w500/${filmInfo.poster_path}`}/>

@@ -20,7 +20,7 @@ export default function Header() {
       <Sidebar/>
       <div className='  flex flex-row rounded-lg items-center overflow-hidden'>
          <Link to={'/'} className=' rounded-lg w-10 lg:w-16'><img className='' src='/CineQuestLogo2.png'/></Link>
-         <Link to={'/'} className=' rounded-lg '><div className='-ml-3 text-lg  font-extrabold rounded-lg p-2 lg:text-3xl'>CINEQuest</div></Link>
+         <Link to={'/'} className=' rounded-lg '><div className='-ml-3 text-lg  font-extrabold rounded-lg p-2 lg:text-3xl'>CineQuest</div></Link>
          </div>
       <div className='hidden sm:flex flex-row gap-5 text-md lg:text-lg'>
         <Link to='/signin' className='' >SIGN IN</Link>

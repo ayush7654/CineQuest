@@ -11,7 +11,7 @@ type propType= Partial<InfoType>
 export default function Home() {
 
   const path= useLocation()
-  console.log(path)
+
   
  const [homepageMovies,setHomepageMovies ]= useState<propType[]>([])
 const [BgImg,setBgImg]= useState<string>('/HomeBGImg10.jpg')
@@ -38,7 +38,7 @@ useEffect(()=>{
     ? `url(${BgImg})`
     : undefined;
 
-console.log(BgImg)
+
  //Fetching data about upcoming movies to display them on homepage.
  useEffect(()=>{
   const fetchData=async()=>{
@@ -74,7 +74,7 @@ console.log(BgImg)
       backgroundSize: 'contain',
       backgroundPosition: ' center -20px ',
       backgroundRepeat: 'no-repeat',
-      //backgroundAttachment:"fixed",
+     
       zIndex: -1, // Make sure it stays behind the content
     }} ></div>
       <div className="h-36 mt-5 sm:h-96 " >

@@ -29,7 +29,7 @@ export default function useMovieList(list:MovieType[],previousPage:string,forPag
        ))}
      </div>
    </div>:<div>
-           <div className="borde border-white   w-full flex flex-col ">
+           <div className="borde border-white    w-full flex flex-col ">
         {list.map((movie,index)=>(
           <div  key={index} className="flex flex-col border-b-2  py-2 my-2 border-gray-600 items-center  h-[200px] ">
             <div className="borde border-white">
@@ -50,7 +50,7 @@ export default function useMovieList(list:MovieType[],previousPage:string,forPag
             </div>
             </div>
            
-          {/*   <div className="text-gray-600 font-extrabold flex justify-center items-center h-[5%]">________________________________________________________________________________________________________________________________________</div> */}
+       
             
           </div>
         ))}
